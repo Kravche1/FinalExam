@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_nav_graph"
+    app:startDestination="@id/loginActivity2">
+
+
+    <fragment
+        android:id="@+id/loginActivity2"
+        tools:layout="@layout/login_fragment"
+        android:name="com.example.lets_go.Login.LoginFragment"
+        android:label="LoginActivity" >
+        <action
+            android:id="@+id/action_loginActivity2_to_registrationActivity2"
+            app:destination="@id/registrationActivity2" />
+        <action
+            android:id="@+id/action_loginActivity2_to_resetActivity2"
+            app:destination="@id/resetActivity2" />
+
+        <action
+            android:id="@+id/action_loginActivity2_to_mainPageActivity"
+            app:destination="@id/mainPageActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationActivity2"
+        tools:layout="@layout/registration_fragment"
+        android:name="com.example.lets_go.RegistrationFragment"
+        android:label="RegistrationActivity" >
+        <action
+            android:id="@+id/action_registrationActivity2_to_loginActivity2"
+            app:destination="@id/loginActivity2" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetActivity2"
+        android:name="com.example.lets_go.ForgotPasswordFragment"
+        android:label="activity_reset_actity"
+        tools:layout="@layout/forgot_password_fragment" >
+        <action
+            android:id="@+id/action_resetActivity2_to_loginActivity2"
+            app:destination="@id/loginActivity2" />
+    </fragment>
+
+    <activity
+        android:id="@+id/mainPageActivity"
+        android:name="com.example.lets_go.Login.MainPageActivity"
+        android:label="main_page_activity"
+        tools:layout="@layout/main_page" />
+
+</navigation>
